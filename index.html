@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAZ - Zapatero a sus Zapatos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html">
+        <img src="assets/ZAPATERO LOGO BLANCO.png" alt="Logo Zapatero a sus Zapatos" class="logo" id="logo">
+      </a>
+      <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+      <nav id="nav" class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="bodega.html">Bodega</a></li>
+          <li><a href="viñedos.html">Viñedos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Slideshow -->
+  <section class="slideshow-container">
+    <div class="slide fade">
+      <img src="assets/montaña_atardecer.jpg" alt="Viñedos al atardecer">
+      <div class="text-overlay">
+        <h1>Zapatero a su Zapato</h1>
+        <p>Un vino con onda :)</p>
+      </div>
+    </div>
+    <div class="slide fade">
+      <img src="assets/finca.jpg" alt="Finca">
+      <div class="text-overlay">
+        <h1>Zapatero a su Zapato</h1>
+        <p>Un vino con onda :)</p>
+      </div>
+    </div>
+    <div class="slide fade">
+      <img src="assets/viñedo_y_cielo_2.JPG" alt="Viñedo Y Cielo">
+      <div class="text-overlay">
+        <h1>Zapatero a su Zapato</h1>
+        <p>Un vino con onda :)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secciones tipo portada -->
+  <section id="nosotros" class="section_nosotros hidden">
+    <img src="assets/index_nosotros.jpg"  class="background-image">
+    <div class="content-wrapper-nosotros">
+        <h2>Sobre nosotros</h2>
+        <img src="assets/index_nosotros.jpg"  class="content-wrapper-nosotros-img">
+        <p>Un padre, un hijo, un vino. <br> Conocé nuestra historia.</p>
+        <a href="nosotros.html">Ver más</a>
+    </div>
+  </section>
+
+  <section id="bodega" class="section_bodega hidden">
+    <img src="assets/uvas_en_proceso.JPG"  class="background-image-bodega">
+    <div class="content-wrapper-bodega">
+        <h2>La Bodega</h2>
+        <p>Descubre nuestro catálogo de vinos y sus caracteristicas.</p>
+        <a href="bodega.html">Ver más</a>
+    </div>
+  </section>
+  <section id="viñedos" class="section_viñedos hidden">
+    <img src="assets/uvas_collecting.JPG" alt="Nosotros" class="background-image-viñedos">
+    <div class="content-wrapper-viñedos">
+        <h2>Nuestro Suelo</h2>
+        <p>Conoce los viñedos donde nacen nuestras uvas.</p>
+        <a href="viñedos.html">Ver más</a>
+    </div>
+  </section>
+  <div class="fondo-image"></div>
+
+  
+    <!-- Footer -->
+    <link rel="stylesheet" href="css/footer.css" >
+    <footer class="footer footer-index">
+        <div class="footer-container">
+                <div class="footer-logos">
+                <a href="https://www.instagram.com/zaz.vinos/" target="_blank">
+                  <button class="social-logo"><i class="bi bi-instagram"></i></button>
+                </a>
+                <a href="https://wa.me/5491153899090" target="_blank">
+                  <button class="social-logo"><i class="bi bi-whatsapp"></i></button>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=zazvinos.com.ar" class="email-button" target="_blank">
+                  <button class="social-logo"><i class="bi bi-envelope-at"></i></button>
+                </a>
+                <a href="#" class="footer-donde-comprar" id="footer-donde-comprar">Dónde Comprar</a>
+                </div>
+                <div class="logo-footer"><img src="assets/ZAPATERIO LOGO.png" alt="Zapatero A Su Zapato"></div>
+        </div>
+        <p class="footer-rights">© Zapatero A Su Zapato - 2025 Todos los derechos reservados.</p>
+    </footer>
+    
+          <!-- Modal para Dónde Comprar -->
+            <div id="modal-donde-comprar" class="modal-dc">
+              <div class="modal-content-dc">
+                
+                <div class="modal-header-footer"> 
+                  <button class="close-dc" data-modal="modal-donde-comprar"><i class="bi bi-x"></i></button>         
+                  <h1>Donde comprar:</h1>
+                  
+                </div>
+                <div class="flexbox">
+                  <p>Las compras mayoristas y minoristas las podés realizar por mail y por WhatsApp.</p>
+                  <p>Tenemos una historia destacada en Instagram con todos nuestros puntos de venta actualizados en tiempo real :)</p>
+                </div>
+              </div>
+            </div>
+        <script src="js/modal-footer.js"></script>
+        <script src="js/scrolled-header.js"></script>
+        <script src="js/menu.js"></script> 
+  <!-- Script para Slideshow -->
+  <script>
+    let slideIndex = 0;
+    let slides;
+  
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0; // Ocultar todas las imágenes
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+  
+      slides[slideIndex - 1].style.opacity = 1; // Mostrar la imagen actual
+      setTimeout(showSlides, 5000); // Cambia cada 5 segundos
+    }
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      slides = document.querySelectorAll(".slide");
+      slides[0].style.opacity = 1; // Primera imagen visible al inicio
+      showSlides();
+    });
+  </script>
+
+    
+    
+</body>
+</html>
+

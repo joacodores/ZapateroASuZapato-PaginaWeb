@@ -1,0 +1,1208 @@
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    
+    min-height: 100vh;
+    background-color: #f5ebc9;
+    overflow-x: hidden;
+    font-variant: normal;
+    
+  }
+ /* Header */
+ header {
+  position: absolute;
+  align-content: center;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+.abrir-menu{
+  display:none;
+  justify-self: flex-end;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+.logo {
+  width: 220px;
+  height: auto;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 3rem;
+}
+
+nav ul li a {
+  color: #fff7f3;
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-variant-caps: all-small-caps  ;
+  transition: opacity 0.3s ease;
+}
+nav ul li a.active {
+  color: #e9a246; /* Color de texto diferente */
+  border-radius: 5px; /* O un borde si quieres destacar */
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+  color: #f0a037;
+}
+/* Clase que se activará al hacer scroll */
+.scrolled {
+  position: fixed; /* Se vuelve fijo cuando baja */
+  background-color: #f5ebc9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Le da un efecto flotante */
+}
+.scrolled nav ul li a{
+  color: #5c3030;
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-variant-caps: all-small-caps  ;
+  transition: opacity 0.3s ease;
+}
+.scrolled nav ul li a.active {
+  color: #a02525; /* Color de texto diferente */
+  border-radius: 5px; /* O un borde si quieres destacar */
+  font-weight: bold;
+}
+
+/*Media queries header*/
+@media (max-width: 1700px) {
+  nav ul li a {
+    font-size: 1.8rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.8rem;
+  }
+  .logo {
+    width: 180px;
+  }
+}
+@media (max-width: 1400px) {
+  nav ul li a {
+    font-size: 1.6rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.6rem;
+  }
+  .logo {
+    width: 160px;
+  }
+}
+/* 🔹 Notebook */
+@media (max-width: 1150px) {
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.5rem;
+  }
+  .logo {
+    width: 140px;
+    padding: 5px;
+  }
+}
+
+/* 🔹 Tablet */
+@media (max-width: 960px) {
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+/* 🔹 Mobile */
+@media screen and (max-width: 700px) {
+
+  body{
+    padding-top: 150px;
+  }
+  .logo {
+    width: 170px;
+    padding: 0px;
+    height: auto;
+  }
+  header, footer {
+    min-width: 100vw; /* Asegura que ocupe todo el viewport */
+    max-width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+.abrir-menu{
+  display: block;
+  border: 0;
+  font-size: 1.8rem;
+  background-color: transparent;
+  color: #ffffff;
+}
+.scrolled .abrir-menu{
+  color: #5c3030;
+}
+
+  .nav{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    background-color: #f5ebc9;
+    padding: 4rem;
+    padding-bottom: 50rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  }
+
+  .nav.visible{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    align-items: end;
+  }
+  .nav-links a{
+    color: #5c3030;
+  }
+   nav ul li a.active {
+    color: #a02525; 
+  }
+  .logo {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .logo {
+    width: 140px;
+  }
+}
+@media screen and (max-width: 450px) {
+
+  .logo {
+    width: 120px;
+  }
+}
+div, body{
+    box-sizing: border-box;
+  }
+  /* Establecer box-sizing en todos los elementos */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+/* Ajustar opacidad/brillo del fondo estático */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/uvas_en_proceso.JPG') no-repeat center center/cover;
+  z-index: -1;
+  filter: brightness(30%); 
+  filter: drop-shadow(100%);
+  opacity: 0.9; /* Reducir opacidad */
+}
+
+/* Sección introductoria */
+.intro-section, .winemaking-tanques, .winemaking-barriles, .winemaking-botellas{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px 10px 30px 10px;
+  background-color: rgba(160, 121, 125, 0.432); /* Fondo oscuro translúcido */
+  border-radius: 10px;
+  padding: 20px 50px;
+}
+
+.intro-section{
+  margin-top: 230px;  
+}
+.winemaking-titulo h2{
+  font-size: 60px;
+  color: #e0d8c5;
+  text-align: center;
+}
+.winemaking-titulo h2{
+  font-size: 50px;
+}
+
+.intro-text, .tanques-text, .barriles-text, .winemaking-botellas-text{
+  flex: 1; 
+  margin: 20px;
+  width: 80%;
+  height: auto;
+  max-width: 700px;
+  padding: 40px;
+  object-fit: contain;
+}
+
+.intro-image, .tanques-image, .barriles-image ,.botellas-image{
+  flex: 1; 
+  margin: 20px;
+  width: 80%;
+  height: auto;
+  max-width: 700px;
+  padding: 20px;
+  object-fit: contain;
+}
+
+.intro-image img,.tanques-image img, .barriles-image img ,.botellas-image img {
+  flex: 2;
+  object-fit: contain;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text h1, .tanques-text h1, .winemaking-barriles h1, .winemaking-botellas h1 {
+  font-size: clamp(25px, 2.5vw, 45px);
+  margin-bottom: 20px;
+  color: #f5ebc9;
+  text-wrap-style: pretty;
+}
+
+.intro-text p, .tanques-text p, .winemaking-barriles p, .winemaking-botellas p {
+  font-size: clamp(16px, 1.4vw, 24px);
+  line-height: 1.5;
+  font-weight: 500;
+  color:#fff9f9;
+  font-variant: normal;
+  text-wrap-style: pretty;
+}
+
+/*tanques*/
+
+.tanques-image{
+  max-width: 600px;
+}
+
+/*barriles*/
+.barriles-text {
+  text-align: right;
+}
+.barriles-text p, .winemaking-botellas p{
+  font-size: clamp(16px, 2vw, 27px);
+}
+.barriles-text h1, .winemaking-botellas h1{
+  font-size: clamp(25px, 3.5vw, 48px);
+}
+.barriles-image{
+  max-width: 450px;
+}
+
+/*botellas*/
+.winemaking-botellas{
+  margin-bottom: 100px;
+}
+.botellas-image{
+  max-width: 500px;
+}
+@media screen and (max-width: 1150px){
+  .intro-text, .tanques-text, .barriles-text, .winemaking-botellas-text{
+    max-width: 500px;
+    padding: 0 20px;
+  }
+  .winemaking-titulo h2{
+    font-size: 40px;
+  }
+  .intro-text p, .tanques-text p{
+    font-size: 15px;
+  }
+  .intro-text h1, .tanques-text h1{
+    font-size: 22px;
+    margin: 10px 0;
+  }
+  .barriles-text p, .winemaking-botellas p{
+    font-size: 16px;
+  } 
+  .barriles-text h1, .winemaking-botellas h1{
+    font-size: 25px;
+  } 
+  .intro-image{
+    max-width: 600px;
+  }
+  .tanques-image{
+    max-width: 600px;
+  }
+  .barriles-image{
+    max-width: 350px;
+  }
+  .botellas-image{
+    max-width: 400px;
+  }
+}
+
+  @media screen and (max-width: 960px){
+    .intro-section, .winemaking-tanques, .winemaking-barriles, .winemaking-botellas{
+    margin: 30px;
+    }
+    .winemaking-botellas{
+      margin-bottom: 70px;
+      }
+    .intro-section{
+      padding: 20px 30px;
+      margin-top: 200px;  
+      gap: 1rem;
+    }
+    .winemaking-titulo h2{
+      font-size: 30px;
+    }
+    .winemaking-tanques{
+      padding: 20px 30px;
+    }
+    .intro-text, .tanques-text, .barriles-text, .winemaking-botellas-text{
+      max-width: 350px;
+      padding: 0 0;
+    }
+    .intro-text p, .tanques-text p{
+      font-size: 13px;
+    }
+    .intro-text h1, .tanques-text h1{
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .barriles-text p, .winemaking-botellas p{
+      font-size: 13px;
+    } 
+    .barriles-text h1, .winemaking-botellas h1{
+      font-size: 22px;
+      margin: 10px 0;
+    } 
+    .intro-image{
+      max-width: 600px;
+      padding: 0;
+    }
+    .tanques-image{
+      max-width: 600px;
+      padding: 0;
+    }
+    .barriles-image{
+      max-width: 250px;
+      padding: 0;
+    }
+    .botellas-image{
+      max-width: 400px;
+      padding: 0;
+    }
+}
+@media screen and (max-width: 750px){
+  .intro-text p, .tanques-text p{
+    font-size: 11px;
+  }
+  .intro-text h1, .tanques-text h1{
+    font-size: 18px;
+    margin: 10px 0;
+  }
+}
+@media screen and (max-width: 700px){
+  .intro-section, .winemaking-tanques, .winemaking-barriles, .winemaking-botellas{
+    flex-direction: column;
+    padding: 20px 20px;
+    gap: 1rem;
+  }
+  .winemaking-barriles{
+    flex-direction: column-reverse;
+  }
+  .barriles-text, .winemaking-botellas-text{
+    text-align: left;
+    padding: 0 0;
+    max-width: 500px;
+  }
+  .intro-section{
+    margin-top: 50px;  
+ 
+  }
+  .winemaking-titulo h2{
+    font-size: 25px;
+  }
+  .intro-text, .tanques-text, .tanques-image, .intro-image{
+    max-width: 500px;
+    padding: 0 0;
+  }
+  .barriles-image{
+    max-width: 350px;
+    padding: 0;
+  }
+  .botellas-image{
+    max-width: 400px;
+    padding: 0;
+  }
+  .intro-text p, .tanques-text p, .barriles-text p, .winemaking-botellas p{
+    font-size: 18px;
+  }
+  .intro-text h1, .tanques-text h1, .barriles-text h1, .winemaking-botellas h1{
+    font-size: 26px;
+    margin: 20px 0;
+    
+  }
+}
+@media screen and (max-width: 520px){
+.intro-section, .winemaking-tanques, .winemaking-barriles, .winemaking-botellas{
+  padding: 20px 10px;
+  gap: 0.5rem;
+}
+.winemaking-titulo h2{
+  font-size: 20px;
+}
+.intro-text p, .tanques-text p, .barriles-text p, .winemaking-botellas p{
+  font-size: 16px;
+}
+.intro-text h1, .tanques-text h1, .barriles-text h1, .winemaking-botellas h1{
+  font-size: 21px;
+  margin: 20px 0;
+}
+}
+@media screen and (max-width: 420px){
+.intro-section, .winemaking-tanques, .winemaking-barriles, .winemaking-botellas{
+  gap: 0.5rem;
+  margin: 20px;
+  padding: 15px 5px;
+}
+.winemaking-botellas{
+  margin-bottom: 100px; 
+}
+.winemaking-titulo h2{
+  font-size: 21px;
+}
+.intro-text p, .tanques-text p, .barriles-text p, .winemaking-botellas p{
+  font-size: 14px;
+}
+.intro-text h1, .tanques-text h1, .barriles-text h1, .winemaking-botellas h1{
+  font-size: 19px;
+  margin: 20px 0;
+}
+}
+@media screen and (max-width: 350px){
+  .intro-section, .winemaking-tanques, .winemaking-barriles, .winemaking-botellas{
+    gap: 0.5rem;
+    margin: 20px;
+    padding: 15px 5px;
+  }
+  
+  .winemaking-titulo h2{
+    font-size: 19px;
+    padding: 5px;
+  }
+  .intro-text h1, .tanques-text h1, .barriles-text h1, .winemaking-botellas h1{
+    font-size: 17px;
+    margin: 20px 0;
+  }
+  }
+/* Vinos */
+.catalogo-titulo, .winemaking-titulo{
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.catalogo-titulo h2{
+  font-size: 60px;
+  color: #e0d8c5;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 10px 30px 10px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background-color: rgba(160, 121, 125, 0.432);
+}
+
+/* Catálogo de vinos con tarjetas */
+.catalogo-vinos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px;
+  padding: 20px 20px;
+
+}
+
+.vino {
+  background-color: rgba(155, 96, 64, 0.685);
+  border-radius: 10px;
+  padding: 20px;
+  border-style: solid;
+  border-color: #3f2424;
+  border-width: 1px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vino:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.vino img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px;
+}
+.vino-descripcion{
+  text-wrap-style: pretty;
+}
+.vino-descripcion h2 {
+  font-size: clamp(22px, 3.5vw, 35px);
+  color: #f5ebc9;
+  
+}
+.vino-descripcion h1 {
+  font-size: clamp(18px, 3vw, 28px);
+  font-variant: normal;
+  font-weight: 300;
+  color: #f5ebc9d0;
+  margin: 5px;;
+}
+
+.ver-mas-btn {
+  background-color: #812711;
+  color: #fff4d1;
+  border: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+.ver-mas-btn:hover {
+  background-color: #c25131;
+  color: #7c3422;
+}
+
+.vino {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vino:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 1560px){
+  .content {
+    padding: 30px 30px;
+  }
+
+  .catalogo-vinos {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 30px 10px;
+  }
+  .vino {
+    padding: 15px;
+  }
+  .vino img {  
+    max-width: 175px;
+    margin: 15px;
+  }
+  .vino-descripcion h2 {
+    font-size: 24px;
+  }
+  .vino-descripcion h1 {
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 1360px){
+  .catalogo-vinos {
+    padding: 10px;
+  }
+  .catalogo-titulo h2{
+    font-size: 50px;
+  }
+  .vino img {  
+    max-width: 150px;
+    margin: 10px;
+  }
+  .vino-descripcion h2 {
+    font-size: 19px;
+  }
+  .vino-descripcion h1 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .ver-mas-btn {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 960px) { 
+  .catalogo-titulo h2{
+    font-size: 40px;
+  }
+  .content {
+    margin: 30px ;
+    padding: 30px;
+  }
+  .catalogo-vinos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 20px 40px;
+  }
+  .vino{
+    width: 100%;
+    padding: 10px 20px;
+    max-width: 350px;
+    justify-self: center;
+  }
+  .vino img{
+    padding: 0;
+    max-width: 170px;
+  }
+}
+@media (max-width: 860px) { 
+  .catalogo-vinos {
+    padding: 20px 20px;
+  }
+  .vino img{
+    max-width: 150px;
+  }
+}
+@media (max-width: 700px) { 
+  .catalogo-vinos {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 5px;
+  }
+  .catalogo-titulo h2{
+    font-size: 30px;
+
+  }
+  .vino{
+    width: 100%;
+    padding: 20px 20px;
+    max-width: 400px;
+    justify-self: center;
+  }
+  .vino img{
+    max-width: 140px;
+  }
+}
+@media (max-width: 600px) { 
+  .content {
+    padding: 10px 40px;
+  }
+  .catalogo-vinos {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px 0px;
+    gap: 0;
+  }
+  .catalogo-titulo h2{
+    font-size: 30px;
+  }
+  .vino{
+    width: 100%;
+    padding: 20px 20px;
+    margin: 10px 0;
+    max-width: 400px;
+    justify-self: center;
+  }
+  .vino img{
+    max-width: 150px;
+    object-fit: contain;
+    padding: 0 0 0 0;
+  }
+}
+@media (max-width: 400px) {
+  .content {
+    padding: 10px 10px;
+  } 
+  .catalogo-vinos {
+    padding: 0px 0px;
+    gap: 0;
+  }
+  .vino{
+    max-width: 500px;
+
+  }
+  .vino img{
+    align-self: center;
+    max-width: 125px;
+    object-fit: contain;
+  }
+}
+
+/* Modal (tarjeta emergente) */
+.modal {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out; /* Animación */
+}
+
+.modal-content {
+  
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #f5ebc9;
+  color: #5c3030;
+  border-radius: 20px;
+  padding: 20px;
+  padding-right: 10px;
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  transform: scale(0.8);
+  animation: zoomIn 0.3s ease-in-out forwards;
+}
+.close-bodega{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  
+}
+.close-bodega-button{
+  
+  
+  margin-top: 0;
+  font-weight: 900;
+  font-size: 30px;
+  padding: 0;
+  color: #5c3030;
+  cursor: pointer;
+  background-color: transparent;
+  border:0;
+}
+.modal-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 27px 0 27px 27px;
+}
+.modal-header h2 {
+  font-size: 2.2rem;
+  align-self:flex-end; 
+}
+
+.modal-header img {
+  max-width: 200px; /* Tamaño del logo */
+  margin-right: 50px;
+  height: auto;
+  
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  height: auto;
+  width: 100%;
+  padding: 10px 30px 20px 30px;
+}
+.modal-body li{
+  font-size: 1.1rem;
+  font-weight: 500;
+  object-fit: contain;
+}
+.modal-description, .modal-description-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-description{
+  max-width: 750px;
+}
+.modal-description-2{
+  flex: 1;
+  background-color: #50000000;
+  max-width: 575px;
+  margin-right:0;
+  padding-bottom: 20px;
+}
+
+.modal-abajo{
+  margin-top: 10px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-image {
+  align-self: flex-end;
+  background-color: #3f242400;
+  flex:1;
+  max-width: 165px;
+  margin:0;
+  width: auto;
+  height: auto;
+}
+
+.modal-image img {
+  flex: 2;
+  max-width: 100%;
+  padding: 0px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/*tarjeta cabernet*/
+
+.modal-image-cabernet {
+  align-self: flex-end;
+  background-color: #3f242400;
+  flex:1;
+  max-width: 150px;
+  margin:0;
+  width: auto;
+  height: auto;
+}
+
+.modal-image-cabernet img {
+  flex: 2;
+  max-width: 100%;
+  padding: 0px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+/*tarjeta blend*/
+.modal-image-blend {
+  align-self: flex-end;
+  background-color: #3f242400;
+  flex:1;
+  max-width: 130px;
+  margin:0;
+  width: auto;
+  height: auto;
+
+}
+
+.modal-image-blend img {
+  flex: 2;
+  max-width: 100%;
+  padding: 0px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/*tarjeta torrontes*/
+
+
+.modal-image-torrontes {
+  align-self: baseline;
+  background-color: #3f242400;
+  flex:1;
+  max-width: 150px;
+  align-self: flex-end;
+  width: auto;
+  height: auto;
+}
+
+.modal-image-torrontes img {
+  flex: 2;
+  max-width: 100%;
+  padding: 0px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1700px){
+  .modal-content{
+    width: 70%;
+  }
+  .modal-header{
+    background-color: #b9828200;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+  .modal-header h2 {
+    font-size: 1.8rem;
+    align-self:flex-end; 
+  }
+  .modal-body li{
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .modal-header img {
+    max-width: 150px; /* Tamaño del logo */
+    height: auto;
+  }
+  .modal-body {
+    padding: 10px 30px 20px 30px;
+    margin-top: 0;
+  }
+  .modal-image {
+    max-width: 120px;
+  }
+  .modal-image-cabernet {
+    max-width: 110px;
+  }
+  .modal-image-blend {
+    max-width: 105px;
+  }
+  .modal-image-torrontes {
+    max-width: 120px;
+  }
+}
+@media screen and (max-width: 1100px){
+  .modal-content{
+    width: 80%;
+  }
+  .modal-header{
+    padding: 10px 20px 20px 20px;
+  }
+  .modal-header h2 {
+    font-size: 1.6rem;
+    align-self:flex-end; 
+  }
+  .modal-header img {
+    max-width: 125px; /* Tamaño del logo */
+    margin-right: 50px;
+    padding-right: 0;
+  }
+  .modal-body {
+    padding: 10px 20px 20px 20px;
+  }
+  .modal-image {
+    max-width: 125px;
+  }
+  .modal-image-cabernet {
+    max-width: 115px;
+  }
+  .modal-image-blend {
+    max-width: 110px;
+  }
+  .modal-image-torrontes {
+    max-width: 110px;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .modal-header{
+    padding: 10px 20px 10px 20px;
+  }
+  .modal-header h2 {
+    font-size: 1.4rem;
+    align-self:flex-end; 
+  }
+  .modal-body li{
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .modal-header img {
+    max-width: 110px; /* Tamaño del logo */
+    margin-right: 40px;
+    padding-right: 0;
+  }
+  .modal-body {
+    padding: 10px 20px 20px 20px;
+  }
+  .modal-image {
+    max-width: 100px;
+  }
+  .modal-image-cabernet {
+    max-width: 95px;
+  }
+  .modal-image-blend {
+    max-width: 90px;
+  }
+  .modal-image-torrontes {
+    max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .modal-content{
+    max-width: 100%;
+    max-height: 80%;
+  }
+
+  .modal-description, .modal-description-2{
+    flex:1;
+    max-width: 550px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .modal-body{
+    overflow-y: scroll;
+    scrollbar-color: #5c3030 #5c3030;
+  }
+  .modal-header{
+    flex-direction:column;
+    gap: 1.5rem;
+  }
+  .modal-header h2 {
+    font-size: 1.3rem;
+    align-self: flex-start;
+  }
+  .modal-body li{
+    font-size: 0.9rem;
+  }
+  .modal-header img {
+    max-width: 120px;
+    margin-right: 0;
+    align-self: center; 
+  }
+  .modal-image {
+    flex: 1;
+    max-width: 350px;
+    align-self: center;
+    padding: 20px 0px;
+    margin: 0;
+    object-fit: contain;
+  }
+  .modal-image-cabernet {
+    flex: 1;
+    max-width: 350px;
+    align-self: center;
+    padding: 20px 0px;
+    margin: 0;
+    object-fit: contain;
+  }
+  .modal-image-blend {
+    flex: 1;
+    max-width: 350px;
+    align-self: center;
+    padding: 20px 0px;
+    margin: 0;
+    object-fit: contain;
+  }
+  .modal-image-torrontes {
+    flex: 1;
+    max-width: 350px;
+    align-self: center;
+    padding: 20px 0px;
+    margin: 0;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .modal-content{
+    padding-left: 5px ;
+    padding-right: 5px ;
+  }
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+  .modal-body {
+    scrollbar-color: #5c3030 #5c3030;
+  }
+  
+  .modal-body li{
+    font-size: 0.8rem;
+  }
+  .modal-header img {
+    max-width: 100px;
+    
+  }
+  .modal-image {
+    max-width: 350px;
+    padding: 20px 0px;
+
+  }
+  .modal-image-cabernet {
+    flex: 1;
+    max-width: 350px;
+    align-self: flex-end;
+    padding: 20px 0px;
+    margin: 0;
+    object-fit: contain;
+  }
+  .modal-image-blend {
+    flex: 1;
+    max-width: 350px;
+    align-self: flex-end;
+    padding: 20px 0px;
+    margin: 0;
+    object-fit: contain;
+  }
+  .modal-image-torrontes {
+    flex: 1;
+    max-width: 350px;
+    align-self: flex-end;
+    padding: 20px 0px;
+    margin: 0;
+    object-fit: contain;
+  }
+}
+@media screen and (max-width: 330px){
+  .modal-content{
+    width: 100%;
+  }
+  .modal-header h2 {
+    font-size: 0.7rem;
+  }
+  .modal-body li{
+    font-size: 0.4rem;
+  }
+  .modal-header img {
+    max-width: 55px; 
+  }
+  .modal-abajo{
+    justify-content: space-between;
+  }
+  .modal-image {
+    max-width: 75px;
+
+  }
+}

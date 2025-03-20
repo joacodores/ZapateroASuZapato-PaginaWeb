@@ -1,0 +1,703 @@
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-variant-caps: all-small-caps  ;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+    min-height: 100vh;
+    background-color: #f5ebc9;
+    overflow-x: hidden;
+    padding-top: 250px;
+    overflow-x: hidden;
+  }
+  
+.main-wrapper, header, footer{
+    width: 100%;
+}
+
+ /* Header */
+ header {
+  position: absolute;
+  align-content: center;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+.abrir-menu{
+  display:none;
+  justify-self: flex-end;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+.logo {
+  width: 220px;
+  height: auto;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 3rem;
+}
+
+nav ul li a {
+  color: #fff7f3;
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-variant-caps: all-small-caps  ;
+  transition: opacity 0.3s ease;
+}
+nav ul li a.active {
+  color: #e9a246; /* Color de texto diferente */
+  border-radius: 5px; /* O un borde si quieres destacar */
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+  color: #f0a037;
+}
+/* Clase que se activará al hacer scroll */
+.scrolled {
+  position: fixed; /* Se vuelve fijo cuando baja */
+  background-color: #f5ebc9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Le da un efecto flotante */
+}
+.scrolled nav ul li a{
+  color: #5c3030;
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-variant-caps: all-small-caps  ;
+  transition: opacity 0.3s ease;
+}
+.scrolled nav ul li a.active {
+  color: #a02525; /* Color de texto diferente */
+  border-radius: 5px; /* O un borde si quieres destacar */
+  font-weight: bold;
+}
+
+/*Media queries header*/
+@media (max-width: 1700px) {
+  nav ul li a {
+    font-size: 1.8rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.8rem;
+  }
+  .logo {
+    width: 180px;
+  }
+}
+@media (max-width: 1400px) {
+  nav ul li a {
+    font-size: 1.6rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.6rem;
+  }
+  .logo {
+    width: 160px;
+  }
+}
+/* 🔹 Notebook */
+@media (max-width: 1150px) {
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.5rem;
+  }
+  .logo {
+    width: 140px;
+    padding: 5px;
+  }
+}
+
+/* 🔹 Tablet */
+@media (max-width: 960px) {
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+/* 🔹 Mobile */
+@media screen and (max-width: 700px) {
+
+  body{
+    padding-top: 150px;
+  }
+  .logo {
+    width: 170px;
+    padding: 0px;
+    height: auto;
+  }
+  header, footer {
+    min-width: 100vw; /* Asegura que ocupe todo el viewport */
+    max-width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+.abrir-menu{
+  display: block;
+  border: 0;
+  font-size: 1.8rem;
+  background-color: transparent;
+  color: #ffffff;
+}
+.scrolled .abrir-menu{
+  color: #5c3030;
+}
+
+  .nav{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    background-color: #f5ebc9;
+    padding: 4rem;
+    padding-bottom: 50rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  }
+
+  .nav.visible{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    align-items: end;
+  }
+  .nav-links a{
+    color: #5c3030;
+  }
+   nav ul li a.active {
+    color: #a02525; 
+  }
+  .logo {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .logo {
+    width: 140px;
+  }
+}
+@media screen and (max-width: 450px) {
+
+  .logo {
+    width: 120px;
+  }
+}
+
+div, body{
+  box-sizing: border-box;
+}
+/* Establecer box-sizing en todos los elementos */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Ajustar opacidad/brillo del fondo estático */
+.background-image-viñedos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/montaña_atardecer.jpg') no-repeat center center/cover;
+    z-index: -1;
+    opacity: 1; /* Ajusta la opacidad */
+    filter: brightness(40%);
+  }
+
+  .main-wrapper{
+    max-width: 100%;   
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 4rem; 
+    margin: 20px;
+    padding: 5em;
+    color: #eeb779;
+    border-top:ridge;
+    border-color: #f1dec27a;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  .text-viñedos{
+    flex: 1;
+    align-self: stretch;
+    align-content: center;
+    margin: 20px;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    padding: 50px; 
+    background-color: rgba(126, 104, 106, 0.623);
+    padding: 70px;
+    border-radius: 10px;
+    text-wrap-style: pretty;
+  }
+
+  .imagen-1{
+    flex: 1;
+    width: 100%;
+    max-width: 550px;
+    margin: 20px;
+    height: auto;
+  }
+  .imagen-1 img{
+    flex: 2;
+    max-width: 100%; 
+    width: auto;
+    height: auto; 
+    object-fit: contain; 
+    border-radius: 5px;
+  }
+
+  .text-viñedos h1, .text-viñedos-2 h1, .text-viñedos-3 h1 {
+    color: #f5ebc9;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-viñedos p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-bottom: 30px; /* Espaciado debajo del párrafo */
+    color:#ffeaea;
+    font-variant: normal;
+  }
+
+
+  /*main-wrapper2*/
+  .main-wrapper-2{
+    max-width: 100%;    
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 4rem; 
+    margin:0;
+    padding: 5em;
+    color: #eeb779;
+    border-style:ridge;
+    border-color: #f1dec27a;
+    border-radius: 20px;  
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .text-viñedos-2{
+    flex: 1  ;
+    align-self: stretch;
+    align-content: center;
+    margin: 20px;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    padding: 50px; 
+    background-color: rgba(126, 104, 106, 0.623);
+    padding: 70px;
+    border-radius: 10px;
+    text-wrap-style: pretty;
+  }
+
+  .text-viñedos-2 p, .text-viñedos-3 p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color:#ffeaea;
+    font-variant: normal;
+  }
+  .imagen-2{
+    flex: 1 ;
+    width: 80%;
+    max-width: 700px;
+    margin: 20px;
+    height: auto;
+    object-fit: contain;
+    }
+
+  .imagen-2 img{
+    flex:2;
+    max-width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    border-radius: 5px; 
+    }
+
+    /*wrapper 3*/
+    .main-wrapper-3{
+      max-width: 100%;    
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-wrap: wrap; 
+      gap: 4rem; 
+      margin-bottom: 150px;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      padding: 5rem;
+      color: #eeb779;
+      
+    }
+  
+    .text-viñedos-3{
+      flex: 1;
+      align-self: stretch;
+      align-content: center;
+      margin: 20px;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      padding: 50px; 
+      background-color: rgba(126, 104, 106, 0.623);
+      padding: 70px;
+      border-radius: 10px;
+      text-wrap-style: pretty;
+    }
+    .imagen-3{
+      flex: 1;
+      width: 100%;
+      max-width: 750px;
+      margin: 20px;
+      height: auto;
+      }
+  
+    .imagen-3 img{
+      flex:2;
+      max-width: 100%; 
+      height: auto; 
+      object-fit: contain; 
+      border-radius: 5px; 
+      }
+  
+
+
+@media screen and (max-width: 1580px) {
+  .main-wrapper, .main-wrapper-2, .main-wrapper-3{
+    padding: 40px;
+    gap: 2rem;
+    max-width: 1300px;
+  }
+  .main-wrapper{
+    gap: 4.5rem;
+  }
+  .imagen-1{
+    max-width: 450px;
+  }
+  .text-viñedos{
+    max-width: 550px;
+    padding:30px 30px 30px 50px;
+  }
+  .imagen-2{
+    max-width: 650px;
+  }
+  .text-viñedos-2{
+    max-width: 550px;
+    padding:30px 30px 30px 50px;
+  }
+  .text-viñedos p, .text-viñedos-2 p, .text-viñedos-3 p{
+    font-size: 1.3rem;
+  }
+  .text-viñedos h1, .text-viñedos-2 h1, .text-viñedos-3 h1 {
+    font-size: 3.0rem;
+  }
+  .imagen-3{
+    max-width: 650px;
+  }
+  .text-viñedos-3{
+    max-width: 500px;
+    padding:30px 30px 30px 50px;
+  }
+}
+
+@media screen and (max-width: 1310px) {
+  .main-wrapper, .main-wrapper-2, .main-wrapper-3{
+    margin: 30px 30px;
+    max-width: 1100px;
+    gap: 2rem;
+  }
+  .main-wrapper-2{
+    padding: 15px;
+  }
+  .main-wrapper-3{
+    margin-bottom: 100px;
+  }
+  .main-wrapper{
+    gap:6rem;
+  }
+  .imagen-1{
+    max-width: 400px;
+  }
+  .text-viñedos{
+    max-width: 450px;
+    padding:20px 20px 20px 40px;
+  }
+
+
+  .imagen-2{
+    max-width: 550px;
+  }
+  .text-viñedos-2{
+    max-width: 400px;
+    padding: 40px;
+  }
+  .text-viñedos p, .text-viñedos-2 p, .text-viñedos-3 p{
+    font-size: 1.1rem;
+  }
+  .text-viñedos h1, .text-viñedos-2 h1, .text-viñedos-3 h1 {
+    font-size: 2.3rem;
+  }
+  .imagen-3{
+    max-width: 650px;
+  }
+  .text-viñedos-3{
+    max-width: 500px;
+    padding:40px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .main-wrapper, .main-wrapper-2, .main-wrapper-3{
+    padding: 20px;
+    gap: 1rem;
+    margin: 20px 20px;
+  }
+
+  .main-wrapper-2{
+    padding: 10px;
+  }
+
+  .imagen-1{
+    max-width: 350px;
+  }
+  .text-viñedos p {
+    font-size: 0.8rem;
+  }
+  .text-viñedos{
+    max-width: 350px;
+    padding:30px;
+  }
+
+  .imagen-2{
+    max-width: 400px;
+  }
+  .text-viñedos-2{
+    max-width: 350px;
+    padding:30px;
+  }
+  .text-viñedos p{
+    font-size: 1rem;
+  }
+  .text-viñedos-2 p, .text-viñedos-3 p{
+    font-size: 0.7rem;
+  }
+  .text-viñedos h1, .text-viñedos-2 h1, .text-viñedos-3 h1 {
+    font-size: 1.7rem;
+  }
+  .imagen-3{
+    max-width: 650px;
+  }
+  .text-viñedos-3{
+    max-width: 450px;
+    padding:30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main-wrapper, .main-wrapper-2, .main-wrapper-3{
+    flex-direction: column;
+    align-content: center;
+    background-color: #5c303000;
+    margin: 30px 40px;
+    gap: 1.5rem;
+    max-width: 500px;
+  }
+  .main-wrapper{
+    margin-bottom: 0;
+    padding: 20px;
+  }
+
+  .imagen-1{
+    max-width: 450px;
+    
+  }
+  .text-viñedos p {
+    font-size: 0.9rem;
+    
+  }
+  .text-viñedos{
+    align-self: center;
+    max-width: 450px;
+    margin-bottom:20px;
+    padding:50px 20px 50px 30px;
+  }
+  .main-wrapper-2{
+    flex-direction: column-reverse;
+    padding: 40px 0px;
+    margin: 30px 40px;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+  .imagen-2{
+    max-width: 450px;
+    padding: 0;
+    width: 90%;
+    height: auto;
+  }
+  .text-viñedos-2{
+    align-self: center;
+    max-width: 450px;
+    margin-bottom:20px;
+    width: 90%;
+    padding:50px 20px 50px 30px;
+  }
+  .text-viñedos-2 p, .text-viñedos-3 p{
+    font-size: 0.9rem;
+  }
+  .text-viñedos h1, .text-viñedos-2 h1, .text-viñedos-3 h1 {
+    font-size: 1.8rem;
+  }
+  .imagen-3{
+    max-width: 450px;
+  }
+  .text-viñedos-3{
+    margin-bottom:20px;
+    max-width: 450px;
+    padding:50px 20px 50px 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .main-wrapper,.main-wrapper-2, .main-wrapper-3{
+    gap:1rem;
+    max-width: 450px;
+    width: 90%;
+    padding: 40px 10px;
+    margin: 20px 20px;
+    
+  }
+  .main-wrapper-2{
+    padding-left: 0;
+    padding-right: 0;
+    
+  }
+
+  .main-wrapper-3{
+    margin-bottom: 100px;
+    
+  }
+  .text-viñedos h1, .text-viñedos-2 h1, .text-viñedos-3 h1 {
+    font-size: 1.6rem;
+  }
+  .text-viñedos, .text-viñedos-2 p, .text-viñedos-3 p{
+    font-size: 0.8rem;
+  }
+  .imagen-1{
+    background-color: #e9a24600;
+    max-width: 300px;
+    padding: 0;
+    
+  }
+  .text-viñedos{
+    max-width: 300px;
+    padding:40px 20px 40px 30px;
+  }
+  .imagen-2{
+    max-width: 300px;
+    margin:0;
+    padding: 0px;
+    
+  }
+  .text-viñedos-2{
+    max-width: 300px;
+    
+    padding:40px 20px 40px 30px;
+  }
+  .imagen-3{
+    max-width: 300px;
+  }
+  .text-viñedos-3{
+    max-width: 300px;
+    padding:40px 20px 40px 30px;
+  }
+
+}
+@media screen and (max-width: 400px) {
+
+  .main-wrapper,.main-wrapper-2, .main-wrapper-3{
+    max-width: 350px;
+    gap: 2rem;
+    padding: 40px 0;
+  }
+  .main-wrapper-3{
+    padding: 0;
+    margin-bottom: 75px; 
+  }
+  .main-wrapper{
+    padding: 0;
+    padding-top:30px ;
+    
+    margin-bottom: 0; 
+  }
+  .imagen-1{
+    background-color: #e9a24600;
+    max-width: 275px;
+    padding: 0;
+    
+  }
+  .text-viñedos{
+    max-width: 275px;
+    padding:40px 20px 40px 30px;
+  }
+  .imagen-2{
+    max-width: 275px;
+    padding: 0px;
+  }
+  .text-viñedos-2{
+    max-width: 275px;
+    padding:40px 20px 40px 30px;
+  }
+  .imagen-3{
+    max-width: 275px;
+  }
+  .text-viñedos-3{
+    max-width: 275px;
+    padding:40px 20px 40px 30px;
+  }
+
+}

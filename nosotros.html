@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - ZAZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    
+  </head>
+  <body>
+    <!-- Fondo estático -->
+    <div class="background-image-viñedos"></div> 
+
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        
+        <a href="index.html">
+          <img src="assets/ZAPATERO LOGO BLANCO.png" alt="Logo Zapatero a sus Zapatos" class="logo" id="logo">
+        </a>
+        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav id="nav" class="nav">
+          <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html"class="active">Nosotros</a></li>
+            <li><a href="bodega.html">Bodega</a></li>
+            <li><a href="viñedos.html" >Viñedos</a></li>
+          </ul>
+        </nav>
+      </div>
+  
+    </header>
+    <main class="main-content">
+      <main class="sobre-nosotros">
+        <div class="intro-text">
+          <h2> Sobre nosotros</h2>
+          <p> Somos Roberto y Sebastián Marconi, un padre y un hijo quienes además de estar unidos por la sangre, 
+            siempre compartimos el amor por el buen vino. </p>
+        </div>
+        <div class="imagen-1"> <img src="assets/Nosotros-1.jpg"></div>
+      </main>
+      <main class="sobre-nosotros-2">
+        <div class="text-2">
+          <p> La vida nos llevó a que ese amor por el vino se terminara plasmando en nuestra propia etiqueta, con la premisa de los 
+            valores que nos llevaron a embarcarnos en esta maravillosa aventura: <br>• Nobleza de los recursos utilizados. <br>• Amor por lo que hacemos.<br> 
+            • Calidad garantizada.</p>
+        </div>
+        <div class="imagen-2"> <img src="assets/nosotros-2.jpg"></div>
+      </main>
+    </main>
+     <!-- Footer -->
+    <link rel="stylesheet" href="css/footer.css" >
+    <footer class="footer ">
+        <div class="footer-container">
+                <div class="footer-logos">
+                <a href="https://www.instagram.com/zaz.vinos/" target="_blank">
+                  <button class="social-logo"><i class="bi bi-instagram"></i></button>
+                </a>
+                <a href="https://wa.me/5491153899090" target="_blank">
+                  <button class="social-logo"><i class="bi bi-whatsapp"></i></button>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=zazvinos.com.ar" class="email-button" target="_blank">
+                  <button class="social-logo"><i class="bi bi-envelope-at"></i></button>
+                </a>
+                <a href="#" class="footer-donde-comprar" id="footer-donde-comprar">Dónde Comprar</a>
+                </div>
+                <div class="logo-footer"><img src="assets/ZAPATERIO LOGO.png" alt="Zapatero A Su Zapato"></div>
+        </div>
+        <p class="footer-rights">© Zapatero A Su Zapato - 2025 Todos los derechos reservados.</p>
+    </footer>
+    
+          <!-- Modal para Dónde Comprar -->
+            <div id="modal-donde-comprar" class="modal-dc">
+              <div class="modal-content-dc">
+                
+                <div class="modal-header-footer"> 
+                  <button class="close-dc" data-modal="modal-donde-comprar"><i class="bi bi-x"></i></button>         
+                  <h1>Donde comprar:</h1>
+                  
+                </div>
+                <div class="flexbox">
+                  <p>Las compras mayoristas y minoristas las podés realizar por mail y por WhatsApp.</p>
+                  <p>Tenemos una historia destacada en Instagram con todos nuestros puntos de venta actualizados en tiempo real :)</p>
+                </div>
+              </div>
+            </div>
+      <script src="js/modal-footer.js"></script>
+        <script src="js/scrolled-header.js"></script>
+        <script src="js/menu.js"></script> 
+  </body>
+</html>

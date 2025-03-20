@@ -1,0 +1,724 @@
+/* Reset básico */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  
+ /* Header */
+ header {
+  position: absolute;
+  align-content: center;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+.abrir-menu{
+  display:none;
+  justify-self: flex-end;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+.logo {
+  width: 220px;
+  height: auto;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 3rem;
+}
+
+nav ul li a {
+  color: #fff7f3;
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-variant-caps: all-small-caps  ;
+  transition: opacity 0.3s ease;
+}
+nav ul li a.active {
+  color: #e9a246; /* Color de texto diferente */
+  border-radius: 5px; /* O un borde si quieres destacar */
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+  color: #f0a037;
+}
+/* Clase que se activará al hacer scroll */
+.scrolled {
+  position: fixed; /* Se vuelve fijo cuando baja */
+  background-color: #f5ebc9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Le da un efecto flotante */
+}
+.scrolled nav ul li a{
+  color: #5c3030;
+  font-size: 2.0rem;
+  font-weight: bold;
+  font-variant-caps: all-small-caps  ;
+  transition: opacity 0.3s ease;
+}
+.scrolled nav ul li a.active {
+  color: #a02525; /* Color de texto diferente */
+  border-radius: 5px; /* O un borde si quieres destacar */
+  font-weight: bold;
+}
+
+/*Media queries header*/
+@media (max-width: 1700px) {
+  nav ul li a {
+    font-size: 1.8rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.8rem;
+  }
+  .logo {
+    width: 180px;
+  }
+}
+@media (max-width: 1400px) {
+  nav ul li a {
+    font-size: 1.6rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.6rem;
+  }
+  .logo {
+    width: 160px;
+  }
+}
+/* 🔹 Notebook */
+@media (max-width: 1150px) {
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.5rem;
+  }
+  .logo {
+    width: 140px;
+    padding: 5px;
+  }
+}
+
+/* 🔹 Tablet */
+@media (max-width: 960px) {
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+  .scrolled nav ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+/* 🔹 Mobile */
+@media screen and (max-width: 700px) {
+
+  .logo {
+    width: 170px;
+    padding: 0px;
+    height: auto;
+  }
+  header, footer {
+    min-width: 100vw; /* Asegura que ocupe todo el viewport */
+    max-width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+.abrir-menu{
+  display: block;
+  border: 0;
+  font-size: 1.8rem;
+  background-color: transparent;
+  color: #ffffff;
+}
+.scrolled .abrir-menu{
+  color: #5c3030;
+}
+
+  .nav{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    background-color: #f5ebc9;
+    padding: 4rem;
+    padding-bottom: 50rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  }
+
+  .nav.visible{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    align-items: end;
+  }
+  .nav-links a{
+    color: #5c3030;
+  }
+   nav ul li a.active {
+    color: #a02525; 
+  }
+  .logo {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .logo {
+    width: 140px;
+  }
+}
+@media screen and (max-width: 450px) {
+
+  .logo {
+    width: 120px;
+  }
+}
+div, body{
+  box-sizing: border-box;
+}
+/* Establecer box-sizing en todos los elementos */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*Slideshow */
+  .slideshow-container {
+    position: relative;
+    height: 100vh; /* Fullscreen */
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1; /* Inicialmente transparente */
+    transition: opacity 1.5s ease-in-out; /* Transición suave */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f1ccb3;
+  }
+  
+  .text-overlay h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .text-overlay p {
+    font-size: 2.5rem;
+  }
+  
+  /* Secciones tipo portada */
+  /*Viñedos*/
+  .section_viñedos {
+    position: relative;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding-right: 3rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(224, 232, 183) 30%, rgba(101, 121, 88, 0.301) 50%);
+  }
+  .content-wrapper-viñedos{
+    padding: 200px 45px;
+  }
+  .background-image-viñedos, .background-image-bodega, .background-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .section_viñedos h2, .section_bodega h2, .section_nosotros h2 {
+    font-size: 3.5rem;
+    color:#4e7a39;
+    padding: 15px;
+  }
+  .section_viñedos p, .section_bodega p, .section_nosotros p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    max-width: 500px;
+    color:#282e1a;
+    text-wrap-style: pretty;
+    padding: 15px;
+  }
+  
+  .section_viñedos a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #aed482;
+    color: #4a582f;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .section_viñedos a:hover {
+    color: #a8ca65;
+    background-color: #284b29;
+  }
+
+/*Bodega*/
+
+.section_bodega {
+  position: relative;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding-right: 3rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: linear-gradient(to left, rgb(169, 169, 206) 30%, rgba(154, 180, 137, 0.212) 50%);
+
+}
+
+.background-image-bodega{
+  width: 85%;
+  left: 0;
+  right: auto;
+}
+.content-wrapper-bodega{
+  padding: 180px 15px;
+}
+
+.section_bodega h2 {
+    color: #3f2020;
+}
+.section_bodega p {
+    color:#472953;
+    max-width: 600px;
+}
+
+.section_bodega a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #a77da4;
+    color: #3a204e;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.section_bodega a:hover {
+    background-color: #52385a;
+    color: #dd88f7;
+}
+
+
+/*Nosotros*/
+  .section_nosotros{
+    position: relative;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding-right: 3rem;
+    background: linear-gradient(to right, #d8ceae 30%, rgba(204, 184, 147, 0.171) 50%);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .content-wrapper-nosotros{
+    padding: 200px 75px;
+  }
+  .content-wrapper-nosotros-img{
+    display: none;
+  }
+  .background-image{
+    width: 75%;
+    
+  }
+
+  
+  .section_nosotros h2 {
+    color: #5c3030;
+
+  }
+
+  .section_nosotros p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 15px;
+    color:#472953;
+}
+  
+  .section_nosotros a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #cc7660;
+    color: #501919;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .section_nosotros a:hover {
+    background-color: #692828;
+    color: #d68f7d
+  }
+  
+@media screen and (max-width: 1700px) {
+  .text-overlay h1 {
+    font-size: 3.2rem;
+  }
+  .text-overlay p {
+    font-size: 2.5rem;
+  }
+  .content-wrapper-bodega{
+    max-width: 500px;
+  }
+  
+  .section_viñedos h2, .section_bodega h2, .section_nosotros h2 {
+    font-size: 3.5rem;
+  }
+
+}
+@media screen and (max-width: 1400px) {
+  .text-overlay h1 {
+    font-size: 2.9rem;
+  }
+  .text-overlay p {
+    font-size: 2.2rem;
+  }
+  .section_nosotros{
+    background: linear-gradient(to right, #d8ceae 35%, rgba(204, 184, 147, 0.171) 50%);
+  }
+  .section_bodega {
+    background: linear-gradient(to left, rgb(169, 169, 206) 35%, rgba(154, 180, 137, 0.212) 50%);
+  }
+  .section_viñedos {
+    background: linear-gradient(to right, rgb(224, 232, 183) 35%, rgba(101, 121, 88, 0.301) 50%);
+  }
+  .content-wrapper-bodega{
+    max-width: 450px;
+    padding: 125px 10px;
+  }
+  .content-wrapper-viñedos, .content-wrapper-nosotros{
+    max-width: 550px;
+    padding: 150px 40px;
+  }
+  .section_viñedos h2, .section_bodega h2, .section_nosotros h2 {
+    font-size: 2.8rem;
+  }
+  .section_viñedos p,  .section_nosotros p {
+    font-size: 1.6rem;
+    max-width: 450px;
+  }
+  .section_bodega p{
+    font-size: 1.6rem;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .slideshow-container {
+    height: 75vh;
+  }
+  .text-overlay h1 {
+    font-size: 2.5rem;
+  }
+  .text-overlay p {
+    font-size: 1.9rem;
+  }
+  .section_nosotros{
+    background: linear-gradient(to right, #d8ceae 35%, rgba(204, 184, 147, 0.171) 50%);
+  }
+  .section_bodega {
+    background: linear-gradient(to left, rgb(169, 169, 206) 35%, rgba(154, 180, 137, 0.212) 50%);
+    padding-right: 10px;
+  }
+  .section_viñedos {
+    background: linear-gradient(to right, rgb(224, 232, 183) 35%, rgba(101, 121, 88, 0.301) 50%);
+  }
+
+  .content-wrapper-bodega{
+    max-width: 350px;
+    padding: 100px 0 ;
+    margin: 0;
+
+  }
+  .content-wrapper-viñedos, .content-wrapper-nosotros{
+    max-width: 450px;
+    padding: 120px 30px;
+  }
+  .section_viñedos h2, .section_bodega h2, .section_nosotros h2 {
+    font-size: 2.5rem;
+  }
+  .section_viñedos p,  .section_nosotros p {
+    font-size: 1.4rem;
+    max-width: 350px;
+  }
+  .section_bodega p{
+    font-size: 1.4rem;
+    max-width: 350px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .slideshow-container {
+    height: 65vh;
+  }
+  .text-overlay h1 {
+    font-size: 1.95rem;
+  }
+  .text-overlay p {
+    font-size: 1.8rem;
+  }
+  .section_nosotros{
+    background: linear(to right, #d8ceae 35%, rgba(204, 184, 147, 0) 50%);
+  }
+  .section_bodega {
+    background: linear-gradient(to left, rgb(169, 169, 206) 35%, rgba(154, 180, 137, 0.212) 50%);
+    padding-right: 10px;
+  }
+  .section_viñedos {
+    background: linear-gradient(to right, rgb(224, 232, 183) 35%, rgba(101, 121, 88, 0.301) 50%);
+  }
+
+  .content-wrapper-bodega{
+    max-width: 350px;
+    padding: 75px 0 ;
+    margin: 0;
+
+  }
+  .content-wrapper-viñedos, .content-wrapper-nosotros{
+    max-width: 450px;
+    padding: 90px 0px;
+  }
+   .content-wrapper-nosotros{
+    max-width: 450px;
+    padding: 90px 30px;
+  }
+  .section_viñedos h2, .section_bodega h2, .section_nosotros h2 {
+    font-size: 1.7rem;
+    padding-bottom: 0;
+  }
+  .section_viñedos p,  .section_nosotros p {
+    font-size: 1.0rem;
+    max-width: 350px;
+  }
+  .section_bodega p{
+    font-size: 1rem;
+    max-width: 300px;
+  }
+  .footer{
+  position: absolute;
+  margin-top: -40px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .slideshow-container {
+    height: 65vh;
+  }
+  .text-overlay h1 {
+    font-size: 1.95rem;
+  }
+  .text-overlay p {
+    font-size: 1.8rem;
+  }
+  .section_nosotros{
+    flex-direction: column;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.398)
+  }
+  .section_bodega {
+    flex-direction: column;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.398)
+  }
+  .section_viñedos {
+    flex-direction: column;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.398)
+  }
+  .background-image, .background-image-bodega, .background-image-viñedos{
+    width: 100%;
+    opacity: 1;
+    z-index: -1;
+  }
+  .content-wrapper-nosotros, .content-wrapper-bodega, .content-wrapper-viñedos{
+    max-width: 450px;
+    padding: 50px 30px 20px 30px;
+    margin: 30px ;
+    background-color: #b69e8d71;
+    border-radius: 20px;
+    align-self: flex-start;
+  }
+  
+  .content-wrapper-bodega{
+    max-width: 300px;
+    align-self: flex-end;
+    background-color: #5d497071;
+  }
+  .content-wrapper-viñedos{
+    max-width: 300px;
+    padding-top: 40px;
+    margin-bottom: 55px;
+    background-color: #6f825271;
+  }
+  .section_nosotros a, .section_bodega a, .section_viñedos a {
+    margin-top: 30px;
+    padding: 0.6rem 1.3rem;
+    border-radius: 10px;
+  }
+  .section_nosotros a{
+    background-color: #ffc284;
+  }
+  .section_viñedos h2, .section_bodega h2, .section_nosotros h2 {
+    align-self: flex-start;
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+  .section_nosotros h2 {
+    color: #ffc284;
+  }
+  .section_bodega h2 {
+    color: #ccaddf;
+  }
+  .section_viñedos h2 {
+    color: #d6f095;
+  }
+  .section_viñedos p,  .section_nosotros p {
+    align-self: flex-start;
+    color: #ffe2c5;
+    padding: 10px;
+    font-size: 1.1rem;
+    max-width: 350px;
+  }
+  .section_bodega p{
+    font-size: 1.1rem;
+    padding: 10px;
+    color: #ffe2c5;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .slideshow-container {
+    height: 60vh;
+  }
+  .text-overlay {
+    max-width: 100%;
+    width: 400px;
+  }
+  .text-overlay h1 {
+    font-size: 1.6rem;
+
+  }
+  .text-overlay p {
+    font-size: 1.5rem;
+  }
+  .section_nosotros , .section_bodega , .section_viñedos  {
+    padding: 25px;
+  }
+  .background-image{
+    width: 140%;
+  }
+
+  .content-wrapper-nosotros, .content-wrapper-bodega, .content-wrapper-viñedos{
+    align-self: center;
+    max-width: 300px;
+    padding: 30px 30px 20px 30px;
+  }
+  .content-wrapper-nosotros h2, .content-wrapper-bodega h2, .content-wrapper-viñedos h2{
+    font-size: 1.6rem;
+    padding: 5px;
+  }
+  .content-wrapper-nosotros p, .content-wrapper-bodega p, .content-wrapper-viñedos p{
+    font-size: 1.0rem;
+    padding: 5px;
+  }
+  .section_nosotros a, .section_bodega a, .section_viñedos a {
+    margin-top: 30px;
+    padding: 0.4rem 1.1rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 380px) {
+
+  .text-overlay h1 {
+    font-size: 1.5rem;
+  }
+  .text-overlay p {
+    font-size: 1.4rem;
+  }
+  .section_nosotros , .section_bodega , .section_viñedos  {
+    padding: 25px;
+  }
+
+  .content-wrapper-nosotros, .content-wrapper-bodega, .content-wrapper-viñedos{
+    align-self: center;
+    max-width: 300px;
+    padding: 20px 30px 10px 30px;
+  }
+  .content-wrapper-viñedos{
+  margin-bottom: 40px;
+  }
+  .content-wrapper-nosotros h2, .content-wrapper-bodega h2, .content-wrapper-viñedos h2{
+    font-size: 1.3rem;
+    padding: 5px 0;
+  }
+  .content-wrapper-nosotros p, .content-wrapper-bodega p, .content-wrapper-viñedos p{
+    font-size: 0.85rem;
+    padding: 5px;
+  }
+  .section_nosotros a, .section_bodega a, .section_viñedos a {
+    margin-top: 30px;
+    padding: 0.4rem 1.1rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+}

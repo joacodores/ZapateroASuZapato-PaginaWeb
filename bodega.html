@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega - ZAZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/bodega.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <a href="index.html">
+          <img src="assets/ZAPATERO LOGO BLANCO.png" alt="Logo Zapatero a sus Zapatos" class="logo" id="logo">
+        </a>
+        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav id="nav" class="nav">
+          <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="bodega.html" class="active">Bodega</a></li>
+            <li><a href="viñedos.html">Viñedos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <script src="js/menu.js"></script>  
+    </header>
+    <!-- Fondo estático -->
+    <div class="background-image"></div>
+
+    <!-- Sección inicial con imagen a la derecha y texto a la izquierda -->
+    <section class="intro-section">
+      <div class="intro-text">
+        <h1>Conoce nuestra bodega</h1>
+        <p>La bodega encargada de vinificar nuestro producto posee la certificación BPM – HACCP – SUSTENTABILIDAD DE BODEGAS DE ARGENTINA.<br>
+          Constatando así que nuestro vino proviene de prácticas cuidadosas con el medio ambiente.
+        </p>
+      </div>
+      <div class="intro-image">
+        <img src="assets/vinos/TERCERA TANDA A-12.jpg" alt="Vino de bienvenida">
+      </div>
+    </section>
+
+
+    <!-- Catálogo de vinos -->
+    <div class="catalogo-titulo"> <h2> Nuestros vinos</h2> </div>
+    <main class="content">
+      <section class="catalogo-vinos">
+        <div class="vino vino-malbec" data-vino="malbec">
+          <img src="assets/vinos/Malbec etiqueta.jpg" alt="Vino Malbec">
+          <div class="vino-descripcion">
+            <h2>Malbec</h2>
+            <h1 data-section="malbec" data-value="nombre">Corte reserva</h1>
+            <button class="ver-mas-btn" data-vino="malbec">Ver más</button>
+          </div>
+        </div>
+        <div class="vino vino-cabernet" data-vino="cabernet">
+          <img src="assets/vinos/Cabernet etiqueta.jpg" alt="Vino Cabernet Franc">
+          <div class="vino-descripcion">
+            <h2>Cabernet Franc</h2>
+            <h1>Corte reserva</h1>
+            <button class="ver-mas-btn" data-vino="cabernet">Ver más</button>
+          </div>
+        </div>
+        <div class="vino vino-blend" data-vino="blend">
+          <img src="assets/vinos/Blend etiqeuta.jpg" alt="Vino Blend">
+          <div class="vino-descripcion">
+            <h2>Blend</h2>
+            <h1>Corte reserva</h1>
+            <button class="ver-mas-btn" data-vino="blend">Ver más</button>
+          </div>
+        </div>
+      
+        <div class="vino vino-torrontes" data-vino="torrontes">
+          <img src="assets/vinos/Torrontes etiqueta.jpg" alt="Vino Torrontés">
+          <div class="vino-descripcion">
+            <h2>Torrontés</h2>
+            <h1>Corte joven</h1>
+            <button class="ver-mas-btn" data-vino="torrontes">Ver más</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="winemaking-titulo"><h2>¿Como hacemos nuestro vino?</h2></div>
+    <section class="winemaking-tanques">
+      <div class="tanques-text">
+        <h1>Tanques</h1>
+        <p>Tras recolectar las uvas en pequeñas cajas plásticas, se realiza una maceración en frío a 7° durante 5 días, para luego proceder a la 
+          fermentación alcohólica que se realiza en tanques de acero inoxidable a temperatura controlada.</p>
+      </div>
+      <div class="tanques-image">
+        <img src="assets/tanques.jpg" alt="Vino de bienvenida">
+      </div>
+    </section>
+
+
+    <section class="winemaking-barriles">
+      <div class="barriles-image">
+        <img src="assets/vinos/barriles.jpg" alt="Vino de bienvenida">
+      </div>
+      <div class="barriles-text">
+        <h1>Barricas </h1>
+        <p>Al salir de los tanques, el jugo de uva realiza la fermentación maloláctica en barricas de roble francés de segundo y tercer uso, durante 12 meses.
+        </p>
+      </div>
+    </section>
+
+    <section class="winemaking-botellas">
+      <div class="winemaking-botellas-text">
+        <h1>Estibado</h1>
+        <p>Finalmente, el líquido reposa como mínimo 6 meses en botella, para estabilizarse y poder salir al mercado.
+        </p>
+      </div>
+      <div class="botellas-image">
+        <img src="assets/vinos/vinos_apilados.jpg" alt="Vino de bienvenida">
+      </div>
+    </section>
+
+    <!-- Tarjeta para Vino 1 -->
+    <div class="modal" id="modal-malbec">
+      
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <div class="close-bodega"><button class="close-bodega-button" id="close"><i class="bi bi-x"></i></button></div>
+          <img id="logo-vino1" src="assets/ZAPATERIO LOGO.png" alt="Logo de la marca">
+          <h2>Malbec - Corte Reserva</h2>
+        </div>
+        <div class="modal-body" id="modal-body-malbec">
+          <div class="modal-description" id="modal-description">
+            
+            <li ><strong>Ubicación de los viñedos:</strong> Vista Flores, Valle de Uco. Mendoza, Argentina.</li>
+            <li ><strong>Maridaje sugerido:</strong> Ideal para pastas con tuco o salsa boloñesa, pizzas y carnes.</li>
+            <li ><strong>Notas de cata:</strong> <a> púrpura intenso. Su aroma remite a notas de frutos rojos y negros, como así también a especias.</a> En boca es frutado y complejo, de taninos redondos. Su
+              final es persistente. Es un vino elegante y complejo.</li>
+          </div>  
+          <div class="modal-abajo" >
+            <div class="modal-description-2" id="modal-description-2">
+              <li ><strong>Suelo:</strong> Franco arenoso de origen aluvional, con gravas en  
+              subsuelo y sedimentos calcáreos.</li>
+              <li ><strong>Vinificación:</strong> Se realiza una maceración en frío a 7° C durante 
+                5 días. Luego se procede a realizar la fermentación 
+                alcohólica a temperatura controlada en tanques de acero 
+                inoxidable. La fermentación maloláctica se realiza en 
+                barricas de roble francés.</li>
+              <li ><strong>Cosecha:</strong> Manual en pequeñas cajas plásticas de 12 kg.
+                En busca de una excelente calidad de uva realizamos una 
+                doble selección de racimos y bayas.</li>
+              <li ><strong>Crianza:</strong> 100% del vino posee 12 meses en barricas de roble 
+                  francés de 2° y 3° uso de 225 litros. Posteriormente reposa 
+                  en botella durante 6 meses.</li>
+              <li ><strong>Altura:</strong> 1000 m.s.n.m</li>
+              <li ><strong>Alcohol:</strong> 14.8°</li>
+              <li ><strong>Temperatura recomendada:</strong> 14-16°C</li>
+              <li ><strong>Winemaker:</strong> José Mounier</li>
+              <li ><strong>Fincas:</strong> Agustín  Vicente</li>
+            </div>
+            <div class="modal-image">
+              <img id="image-vino1" src="assets/vinos/png/malbec.png" alt="Vino Malbec">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjeta para Vino 2 -->
+    <div class="modal" id="modal-cabernet">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="close-bodega"><button class="close-bodega-button" id="close" ><i class="bi bi-x"></i></button></div>
+          <img id="logo-vino2" src="assets/ZAPATERIO LOGO.png" alt="Logo de la marca">
+          <h2>Cabernet franc - Corte Reserva</h2>
+        </div>
+        <div class="modal-body" id="modal-body-cabernet">
+          <div class="modal-description" id="modal-description-cabernet">
+            <li  ><strong>Ubicación de los viñedos:</strong> Vista Flores, Valle de Uco. Mendoza, Argentina.</li>
+            <li ><strong>Maridaje sugerido:</strong> Se recomienda para acompañar quesos de pasta dura, guisados y carnes rojas.</li>
+            <li ><strong>Notas de cata:</strong> De color profundo con matices de color purpura, muy brillantes.
+              Se aprecia gran tipicidad varietal y especias. Es un vino con centro de boca expresivo, gran equilibrio y complejidad
+              proveniente de la guarda. Es profundo y elegante, por lo que persiste en boca, tiene un final largo.</li>
+          </div>  
+          <div class="modal-abajo">
+            <div class="modal-description-2" id="modal-description-2-cabernet">
+              <li ><strong>Suelo:</strong> Franco arenoso de origen aluvional, con gravas en  
+              subsuelo y sedimentos calcáreos.</li>
+              <li ><strong>Vinificación:</strong> Se realiza una maceración en frío a 7° C durante 
+                5 días. Luego se procede a realizar la fermentación 
+                alcohólica a temperatura controlada en tanques de acero 
+                inoxidable. La fermentación maloláctica se realiza en 
+                barricas de roble francés.</li>
+              <li ><strong>Cosecha:</strong>Manual en pequeñas cajas plásticas de 12 kg.
+                En busca de una excelente calidad de uva realizamos una 
+                doble selección de racimos y bayas.</li>
+              <li ><strong>Crianza:</strong> 100% del vino posee 12 meses en barricas de roble 
+                  francés de 2° y 3° uso de 225 litros. Posteriormente reposa 
+                  en botella durante 6 meses.</li>
+              <li ><strong>Altura:</strong> 1100 m.s.n.m</li>
+              <li ><strong>Alcohol:</strong> 14.8°</li>
+              <li ><strong>Temperatura recomendada:</strong> 14-16°C</li>
+              <li ><strong>Winemaker:</strong> José Mounier</li>
+              <li ><strong>Fincas:</strong> Agustín  Vicente</li>
+            </div>
+            <div class="modal-image-cabernet">
+              <img id="image-vino1" src="assets/vinos/png/cabernet.png" alt="Vino Cabernet">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjeta para Vino 3 -->
+    <div class="modal" id="modal-blend" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="close-bodega"><button class="close-bodega-button" id="close"><i class="bi bi-x"></i></button></div>
+          <img id="logo-vino2" src="assets/ZAPATERIO LOGO.png" alt="Logo de la marca">
+          <h2>Blend - Corte Reserva</h2>
+        </div>
+        <div class="modal-body" id="modal-body-blend">
+          <div class="modal-description" id="modal-description-blend">
+            <li><strong>Composición:</strong> 39% Malbec – 50% Merlot – 8% Syrah – 3% Cab Franc.</li>
+            <li><strong>Ubicación de los viñedos:</strong> Vista Flores, Valle de Uco. Mendoza, Argentina.</li>
+            <li><strong>Maridaje sugerido:</strong>Se recomienda para acompañar quesos de pasta dura, guisados y carnes rojas</li>
+            <li><strong>Notas de cata:</strong>  De color rojo violáceo profundo e intenso. Su nariz es compleja, remite a notas
+              de frutos rojos y negros, a su vez presenta aromas de pimiento. 
+              En boca presenta taninos redondos y equilibrados. Es un vino elegante  y persistente</li>
+            </div>  
+            <div class="modal-abajo">
+              <div class="modal-description-2" id="modal-description-2-blend">
+                <li><strong>Suelo:</strong> Franco arenoso de origen aluvional, con gravas en  
+                subsuelo y sedimentos calcáreos.</li>
+                <li><strong>Vinificación:</strong> Se realiza una maceración en frío a 7° C durante 
+                5 días. Luego se procede a realizar la fermentación 
+                alcohólica a temperatura controlada en tanques de acero 
+                inoxidable. La fermentación maloláctica se realiza en 
+                barricas de roble francés.</li>
+                <li><strong>Cosecha:</strong>Manual en pequeñas cajas plásticas de 12 kg. </li>
+                <li><strong>Crianza:</strong> 100% del vino posee 12 meses en barricas de roble 
+                  francés de 2° y 3° uso de 225 litros. Posteriormente reposa 
+                  en botella durante 6 meses.</li>
+                <li><strong>Altura:</strong> 1100 m.s.n.m</li>
+                <li><strong>Alcohol:</strong> 14.8°</li>
+                <li ><strong>Temperatura recomendada:</strong> 14-16°C</li>
+                <li ><strong>Winemaker:</strong> José Mounier</li>
+                <li ><strong>Fincas:</strong> Agustín  Vicente</li>
+              </div>
+              <div class="modal-image-blend">
+                <img id="image-vino1" src="assets/vinos/png/blend.png" alt="Vino Cabernet">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjeta para Vino 4 -->
+    <div class="modal" id="modal-torrontes" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="close-bodega"><button class="close-bodega-button"  id="close"><i class="bi bi-x"></i></button></div>
+          <img id="logo-vino2" src="assets/ZAPATERIO LOGO.png" alt="Logo de la marca">
+          <h2>Torrontés - Corte joven</h2>
+        </div>
+        <div class="modal-body" id="modal-body-torrontes">
+          <div class="modal-description" id="modal-description-torrontes">
+            <li><strong>Composición:</strong> 39% Malbec – 50% Merlot – 8% Syrah – 3% Cab Franc.</li>
+            <li><strong>Ubicación de los viñedos:</strong> Chilecito, La Rioja. Argentina.</li>
+            <li><strong>Maridaje sugerido:</strong>Aperitivo ideal. Agrada con platos especiados, como así también con comida
+              asiática, peruana tahi y sushi.</li>
+            <li><strong>Notas de cata:</strong>  De color amarillo cristalino brillante, con leves reflejos verdosos. En nariz presenta
+              notas florales y fruta citirica. En boca se percibe su frescura. Es un vino equilibrado,
+              fresco y frutado, con excelente tipicidad varietal.</li>
+            </div>  
+            <div class="modal-abajo">
+              <div class="modal-description-2" id="modal-description-2-torrontes">
+                <li><strong>Suelo:</strong> Arenoso con mica</li>
+                <li><strong>Vinificación:</strong> La cosecha es manual, luego se realiza una doble
+                  selección de racimos y granos. El despalillado se realiza sin
+                  estrujar los granos para favorecer la obtención de aromas
+                  frutales. El prensado se realiza en prensa neumática con una
+                  leve maceración de los granos. Este prensado es suave para obtener un mosto de gran calidad. 
+                  La fermentación alcohólica se realiza a una temperatura controlada entre 13° y 15° en
+                  tanques de acero inoxidables con movimiento de lías en forma diaria para obtener
+                  un equilibrio en boca y preservar la fruta y su frescura. El vino obtenido permanece
+                  un tiempo breve con las lías finas para luego ser filtrado y embotellado.</li>
+                <li><strong>Cosecha:</strong>Manual en pequeñas cajas plásticas de 12 kg. </li>
+                <li><strong>Crianza:</strong> Sin añejamiento en barrica</li>
+                <li><strong>Altura:</strong> 1080 m.s.n.m</li>
+                <li><strong>Alcohol:</strong> 12.5°</li>
+                <li ><strong>Temperatura recomendada:</strong> 8-10°C</li>
+                <li ><strong>Winemaker:</strong> José Mounier</li>
+                <li ><strong>Fincas:</strong> Agustín  Vicente</li>
+              </div>
+              <div class="modal-image-torrontes">
+                <img id="image-vino1" src="assets/vinos/png/torrentes.png" alt="Vino Torrontes">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Footer -->
+    <link rel="stylesheet" href="css/footer.css" >
+    <footer class="footer ">
+        <div class="footer-container">
+                <div class="footer-logos">
+                <a href="https://www.instagram.com/zaz.vinos/" target="_blank">
+                  <button class="social-logo"><i class="bi bi-instagram"></i></button>
+                </a>
+                <a href="https://wa.me/5491153899090" target="_blank">
+                  <button class="social-logo"><i class="bi bi-whatsapp"></i></button>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=zazvinos.com.ar" class="email-button" target="_blank">
+                  <button class="social-logo"><i class="bi bi-envelope-at"></i></button>
+                </a>
+                <a href="#" class="footer-donde-comprar" id="footer-donde-comprar">Dónde Comprar</a>
+                </div>
+                <div class="logo-footer"><img src="assets/ZAPATERIO LOGO.png" alt="Zapatero A Su Zapato"></div>
+        </div>
+        <p class="footer-rights">© Zapatero A Su Zapato - 2025 Todos los derechos reservados.</p>
+    </footer>
+    
+          <!-- Modal para Dónde Comprar -->
+            <div id="modal-donde-comprar" class="modal-dc">
+              <div class="modal-content-dc">
+                
+                <div class="modal-header-footer"> 
+                  <button class="close-dc" data-modal="modal-donde-comprar"><i class="bi bi-x"></i></button>         
+                  <h1>Donde comprar:</h1>
+                  
+                </div>
+                <div class="flexbox">
+                  <p>Las compras mayoristas y minoristas las podés realizar por mail y por WhatsApp.</p>
+                  <p>Tenemos una historia destacada en Instagram con todos nuestros puntos de venta actualizados en tiempo real :)</p>
+                </div>
+              </div>
+            </div>
+      <script src="js/modal-footer.js"></script>
+  
+    <script src="js/scrolled-header.js"></script>
+    <script src="js/modal-bodega.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>{
+        const vinoCards = document.querySelectorAll(".vino");
+        const modals = document.querySelectorAll(".modal");
+        const closeButtons = document.querySelectorAll(".close");
+        const openModal = (modalId) => {
+          const modal = document.getElementById(modalId);
+          if(modal){
+            modal.style.display = "flex"; //show modal
+          }
+        };
+        const closeModal = (modal) => {
+          modal.style.display = "none"; // hide modal
+        };
+      
+        vinoCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            const vino = card.getAttribute("data-vino"); // Obtener el identificador del vino
+            const modalId = `modal-${vino}`; // Generar el ID del modal
+            openModal(modalId);
+          });
+        });
+      
+        modals.forEach((modal) => {
+          modal.addEventListener("click", (event) => {
+            if (event.target == modal){
+              closeModal(modal);
+            }
+          }); 
+        
+        const closeButton = modal.querySelector("#close");
+        if (closeButton) {
+            closeButton.addEventListener("click", () => closeModal(modal));
+        }
+        });
+      });
+    </script>     
+  </body>
+</html>
